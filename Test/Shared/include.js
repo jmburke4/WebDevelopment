@@ -15,7 +15,7 @@ function loadJQuery(callback) {
 // referencing this file
 loadJQuery(function() {
     const path = window.location.pathname; 
-    const root = path.substring(0, (path.indexOf('WebDevelopment') + 15))
+    const root = path.substring(0, (path.indexOf('WebDevelopment') + 14))
     console.log(`path: ${path}`);
     console.log(`root: ${root}`);
 
@@ -23,6 +23,6 @@ loadJQuery(function() {
     header.id = 'header';
     document.head.appendChild(header);
 
-    $('#header').load('Shared/include.html'); 
+    $('#header').load(`${root}/Test/Shared/include.html`); 
     console.log('Loaded include.html');
 });
