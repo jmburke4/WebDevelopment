@@ -14,10 +14,12 @@ function loadJQuery(callback) {
 // Now use jQuery to append the contents of _include.html to the header of the document
 // referencing this file
 loadJQuery(function() {
+    console.log(window.location);
+
     const header = document.createElement('div');
     header.id = '_header';
     document.head.appendChild(header);
 
-    $('#_header').load('_include.html'); 
+    $('#_header').load('Shared/_include.html'); 
     console.log('Loaded _include.html');
 });
