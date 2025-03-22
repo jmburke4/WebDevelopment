@@ -17,9 +17,9 @@ loadJQuery(function() {
     console.log(window.location);
 
     const header = document.createElement('div');
-    header.id = '_header';
+    header.id = 'header';
     document.head.appendChild(header);
 
-    $('#_header').load('Shared/_include.html'); 
-    console.log('Loaded _include.html');
+    $('#header').load('Shared/include.html'); 
+    console.log('Loaded include.html');
 });
