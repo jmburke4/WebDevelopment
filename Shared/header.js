@@ -19,7 +19,7 @@ loadJQuery(function() {
   
   console.log(`path: ${path}`);
   console.log(`root: ${root}`);
-  // console.log(`include: ${includePath}`);
+  console.log(`include: ${includePath}`);
 
   const header = document.createElement('div');
   header.id = 'header';
