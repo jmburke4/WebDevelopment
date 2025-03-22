@@ -16,13 +16,16 @@ function loadJQuery(callback) {
 loadJQuery(function() {
     const path = window.location.pathname; 
     const root = path.substring(0, (path.indexOf('WebDevelopment') + 14))
+    const includePath = `${root}/Test/Shared/include.html`
+    
     console.log(`path: ${path}`);
     console.log(`root: ${root}`);
+    console.log(`include: ${includePath}`);
 
     const header = document.createElement('div');
     header.id = 'header';
     document.head.appendChild(header);
 
-    $('#header').load(`${root}/Test/Shared/include.html`); 
+    $('#header').load(includePath); 
     console.log('Loaded include.html');
 });
