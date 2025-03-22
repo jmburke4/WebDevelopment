@@ -11,8 +11,7 @@ function loadJQuery(callback) {
     console.log('Loaded jQuery');
 }
 
-// Now use jQuery to append the contents of _include.html to the header of the document
-// referencing this file
+// Now use jQuery 
 loadJQuery(function() {
     const path = window.location.pathname; 
     const root = path.substring(0, (path.indexOf('WebDevelopment') + 14))
