@@ -1,25 +1,38 @@
 $(window).on('load', function(){
-  LoadGameGrid(boundX, boundY);
-  GoToSquare(locX, locY);
+  LoadGameGrid(_boundX, _boundY);
+  GoToSquare(_locX, _locY);
 });
 
 document.addEventListener('keydown', function(event) {
   switch (event.key) {
     case 'ArrowUp':
-      //console.log('Up arrow key pressed');
-      GoToSquare(locX, locY - 1);
+      if (_direction != 'Down') _direction = 'Up';
       break;
     case 'ArrowDown':
-      //console.log('Down arrow key pressed');
-      GoToSquare(locX, locY + 1);
+      if (_direction != 'Up') _direction = 'Down';
       break;
     case 'ArrowLeft':
-      //console.log('Left arrow key pressed');
-      GoToSquare(locX - 1, locY);
+      if (_direction != 'Right') _direction = 'Left';
       break;
     case 'ArrowRight':
-      //console.log('Right arrow key pressed');
-      GoToSquare(locX + 1, locY);
+      if (_direction != 'Left') _direction = 'Right';
       break;
   }
+});
+
+$('#btnStop').click(function(){
+  // To stop the interval after x seconds:
+  setTimeout(function() {
+    clearInterval(_timer);
+    console.log("Interval stopped");
+  }, 0);
+});
+
+$('#btnStart').click(function(){
+  // Start the timer at the rate of _tick_ms
+  _timer = setInterval(function(){
+    _ticks++;
+    $('#lblTimer').text(_ticks);
+    Advance();
+  }, _tick_ms);
 });
